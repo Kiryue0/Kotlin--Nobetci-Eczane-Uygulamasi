@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">EczaneUygulamasi</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="secilen">Seçilen Şehir:</string>
+    <string-array name="İl">
+        <item>Şehir Seçiniz</item>
+        <item>İstanbul</item>
+        <item>Manisa</item>
+        <item>Isparta</item>
+        <item>Bursa</item>
+        <item>İzmir</item>
+        <item>Denizli</item>
+    </string-array>
+</resources>
