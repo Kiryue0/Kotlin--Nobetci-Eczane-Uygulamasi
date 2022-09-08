@@ -8,9 +8,10 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 
-class RVAdapter(private val mContext:Context,private val pharmacyList:List<OrnekSınıf> )
+class RVAdapter(private val mContext:Context,private val pharmacyGet:List<Pharmacy> )
     :RecyclerView.Adapter<RVAdapter.CardView>() {
 
     inner class CardView(view:View):RecyclerView.ViewHolder(view){
@@ -36,11 +37,17 @@ class RVAdapter(private val mContext:Context,private val pharmacyList:List<Ornek
     }
 
     override fun onBindViewHolder(holder: CardView, position: Int) {
-        val name = pharmacyList[position]
-        holder.satirPharmacyName.text = name.ad
+        val name = pharmacyGet[position]
+        holder.satirPharmacyName.text = name.pharmacyName
+
+        val gecis = SecondFragmentDirections.actionSecondToThird(eczaneAd = name.pharmacyName, eczaneIlce = name.pharmacyDist, eczaneAdres = name.pharmacyAddress, eczaneNumara = name.pharmacyPhone, eczaneLoc = name.pharmacyLoc)
+
+        holder.satirCardView.setOnClickListener{
+            Navigation.findNavController(it).navigate(gecis)
+        }
     }
 
     override fun getItemCount(): Int {
-        return pharmacyList.size
+        return pharmacyGet.size
     }
 }

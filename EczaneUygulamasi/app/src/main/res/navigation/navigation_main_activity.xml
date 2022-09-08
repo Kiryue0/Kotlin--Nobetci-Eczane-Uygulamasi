@@ -22,18 +22,44 @@
         <action
             android:id="@+id/action_second_to_third"
             app:destination="@id/thirdFragment" />
-        <action
-            android:id="@+id/action_secondFragment_to_maps"
-            app:destination="@id/mapsFragment" />
+        <argument
+            android:name="gelenSehir"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument
+            android:name="gelenilce"
+            app:argType="string"
+            android:defaultValue="null" />
     </fragment>
     <fragment
         android:id="@+id/thirdFragment"
         android:name="com.melih.eczaneuygulamasi.ThirdFragment"
         android:label="fragment_third"
-        tools:layout="@layout/fragment_third" />
+        tools:layout="@layout/fragment_third" >
+        <argument
+            android:name="eczaneLoc"
+            app:argType="string" />
+        <argument
+            android:name="eczaneAd"
+            app:argType="string" />
+        <argument
+            android:name="eczaneIlce"
+            app:argType="string" />
+        <argument
+            android:name="eczaneAdres"
+            app:argType="string" />
+        <argument
+            android:name="eczaneNumara"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_thirdFragment_to_mapsFragment2"
+            app:destination="@id/mapsFragment2" />
+    </fragment>
     <fragment
-        android:id="@+id/mapsFragment"
-        android:name="com.melih.eczaneuygulamasi.MapsFragment"
-        android:label="fragment_maps"
-        tools:layout="@layout/fragment_maps" />
+        android:id="@+id/mapsFragment2"
+        android:name="com.melih.eczaneuygulamasi.MapsFragment2"
+        android:label="fragment_maps2"
+        tools:layout="@layout/fragment_maps2" >
+        <argument android:name="loc" />
+    </fragment>
 </navigation>

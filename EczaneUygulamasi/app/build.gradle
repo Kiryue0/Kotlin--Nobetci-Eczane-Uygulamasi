@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
@@ -58,5 +59,8 @@ dependencies {
 
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.10'
+
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.0-alpha01'
+    implementation'androidx.activity:activity-ktx:1.5.1'
 
 }

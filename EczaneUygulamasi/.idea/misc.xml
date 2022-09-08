@@ -4,13 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/melih/AndroidStudioProjects/EczaneUygulamasi/app/src/main/res/drawable/cardviewarrow.xml" value="0.1" />
-        <entry key="..\:/Users/melih/AndroidStudioProjects/EczaneUygulamasi/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/melih/AndroidStudioProjects/EczaneUygulamasi/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/melih/AndroidStudioProjects/EczaneUygulamasi/app/src/main/res/layout/cardview_tasarim.xml" value="0.2" />
         <entry key="..\:/Users/melih/AndroidStudioProjects/EczaneUygulamasi/app/src/main/res/layout/fragment_base.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/melih/AndroidStudioProjects/EczaneUygulamasi/app/src/main/res/layout/fragment_first.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/melih/AndroidStudioProjects/EczaneUygulamasi/app/src/main/res/layout/fragment_maps.xml" value="0.13125" />
+        <entry key="..\:/Users/melih/AndroidStudioProjects/EczaneUygulamasi/app/src/main/res/layout/fragment_maps2.xml" value="0.15677083333333333" />
+        <entry key="..\:/Users/melih/AndroidStudioProjects/EczaneUygulamasi/app/src/main/res/layout/fragment_maps3.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/melih/AndroidStudioProjects/EczaneUygulamasi/app/src/main/res/layout/fragment_second.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/melih/AndroidStudioProjects/EczaneUygulamasi/app/src/main/res/layout/fragment_third.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/melih/AndroidStudioProjects/EczaneUygulamasi/app/src/main/res/menu/toolbar_menu.xml" value="0.2" />
       </map>
     </option>
   </component>
@@ -19,5 +22,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.2" />
+      </ProjectState>
+    </option>
   </component>
 </project>

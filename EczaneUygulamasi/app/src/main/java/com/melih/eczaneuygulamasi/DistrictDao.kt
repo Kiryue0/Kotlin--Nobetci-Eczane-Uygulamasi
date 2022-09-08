@@ -9,6 +9,6 @@ import retrofit2.http.Query
 
 interface DistrictDao {
 
-    @GET("districtList?il=Manisa")
-    fun manisailceler(@Query("adress") adres:String):Call<DistrictGet>
+    @GET("districtList")
+    fun ilceler(@Query("il") adres:String):Call<DistrictGet>
 }

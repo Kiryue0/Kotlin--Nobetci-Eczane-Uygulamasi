@@ -2,6 +2,7 @@ package com.melih.eczaneuygulamasi
 
 import android.util.Log
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.melih.eczaneuygulamasi.databinding.FragmentSecondBinding
 import kotlinx.coroutines.GlobalScope
@@ -16,44 +17,42 @@ class SecondFragment :BaseFragment<FragmentSecondBinding>(
 ) {
 
     override fun initView() {
-         lateinit var orneklerList:ArrayList<OrnekSınıf>
-         lateinit var adapter:RVAdapter
-        binding.recyclerview.setHasFixedSize(true)
-        binding.recyclerview.layoutManager = LinearLayoutManager(requireContext())
+        val bundle:SecondFragmentArgs by navArgs()
+        val sehir = bundle.gelenSehir
+        val ilce = bundle.gelenilce
+        eczanegetir(sehir,ilce)
 
-        val ornek1 = OrnekSınıf("1. Eczane")
-        val ornek2 = OrnekSınıf("2. Eczane")
-        val ornek3 = OrnekSınıf("3. Eczane")
-        orneklerList = ArrayList<OrnekSınıf>()
-        orneklerList.add(ornek1)
-        orneklerList.add(ornek2)
-        orneklerList.add(ornek3)
-        adapter = RVAdapter(requireContext(),orneklerList)
-        binding.recyclerview.adapter = adapter
 
-        binding.button2.setOnClickListener{
-            Navigation.findNavController(it).navigate(R.id.action_secondFragment_to_maps)
-    }
-        manisaSehirler()
     }
 
-    fun manisaSehirler(){
-        val kdi = ApiUtils.getDistrictDao()
+    fun eczanegetir(il:String,ilce: String) {
+        val kdi = ApiUtils.getPharmacyDao()
 
         GlobalScope.launch {
-            val ilceler = kdi.manisailceler("Manisa")
-            ilceler.enqueue(object : Callback<DistrictGet>{
-                override fun onResponse(call: Call<DistrictGet>, response: Response<DistrictGet>) {
-                  for (ilce in response.body()?.districtList!!)
-                      Log.d("Ilceler", "onResponse: ${ilce.district}" )
+            val eczaneler = kdi.eczaneler(il,ilce)
+            eczaneler.enqueue(object : Callback<PharmacyGet> {
+                override fun onResponse(call: Call<PharmacyGet>, response: Response<PharmacyGet>) {
+
+                    lateinit var adapter:RVAdapter
+                    binding.recyclerview.setHasFixedSize(true)
+                    binding.recyclerview.layoutManager = LinearLayoutManager(requireContext())
+                    adapter = RVAdapter(requireContext(),response.body()?.pharmacieList!!)
+                    binding.recyclerview.adapter = adapter
+
+
+
                 }
 
-                override fun onFailure(call: Call<DistrictGet>, t: Throwable) {
+                override fun onFailure(call: Call<PharmacyGet>, t: Throwable) {
+
                 }
             })
         }
 
     }
+
+
+
 
 }
 
